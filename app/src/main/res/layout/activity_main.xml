@@ -19,13 +19,13 @@
                 android:id="@+id/btnPr1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prectical One" />
+                android:text="Practical One" />
 
             <Button
                 android:id="@+id/btnPr2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Prectical Two" />
+                android:text="Practical Two" />
         </LinearLayout>
 
     </LinearLayout>
