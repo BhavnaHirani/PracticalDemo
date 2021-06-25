@@ -3,8 +3,6 @@ package com.bizita.tatvademo.prect1;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-
-import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,21 +26,25 @@ public abstract class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.C
         notifyDataSetChanged();
     }
 
-    @NonNull
     @Override
-    public CommonHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommonHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ViewDataBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),viewType, parent, false);
         return new CommonHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommonHolder holder, int position) {
+    public void onBindViewHolder(CommonHolder holder, int position) {
         onUpdateView(holder,this.data.get(position), position);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return layoutId;
     }
 
     public class CommonHolder extends RecyclerView.ViewHolder{
